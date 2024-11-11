@@ -1,0 +1,26 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/inventory
+        username: postgres
+        password: postgres
+        hikari:
+            maximumPoolSize: 25
+    jpa:
+        hibernate:
+            ddl-auto: update
+logging:
+    file:
+        path: ./target
+    level:
+        root: INFO
+        "[com.e3.api.inventory_service]": INFO
+        "[org.springframework.web]": INFO
+        "[org.springframework.security]": INFO
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
+    endpoint:
+        metrics:
+            enabled: true
